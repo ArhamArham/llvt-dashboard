@@ -24,5 +24,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+
+        if (app()->environment('local')) {
+            app()->register('Arham\LLVT\LLVTServiceProvider');
+        }
     }
 }
