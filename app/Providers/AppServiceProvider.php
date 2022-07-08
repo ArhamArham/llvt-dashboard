@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Model;
+use Illuminate\Database\Eloquent\Model as ModelAlias;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        ModelAlias::unguard();
 
         if (app()->environment('local')) {
             app()->register('Arham\LLVT\LLVTServiceProvider');
